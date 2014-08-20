@@ -48,7 +48,13 @@ if [ ! -f "$laravel_root_folder/composer.json" ]; then
     if [ $HHVM_IS_INSTALLED -eq 0 ]; then
         hhvm /usr/local/bin/composer create-project --prefer-dist laravel/laravel $laravel_root_folder
     else
-        composer create-project --prefer-dist laravel/laravel $laravel_root_folder
+        #composer create-project --prefer-dist laravel/laravel $laravel_root_folder
+         # Create Laravel
+        if [[ "$4" == 'latest-stable' ]]; then
+            composer create-project --prefer-dist laravel/laravel $laravel_root_folder
+        else
+            composer create-project laravel/laravel:$4 $laravel_root_folder
+        fi
     fi
 else
     # Go to vagrant folder
