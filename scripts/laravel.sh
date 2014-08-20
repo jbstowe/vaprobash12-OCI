@@ -21,11 +21,12 @@ else
     laravel_root_folder="$2"
 fi
 
-if [ -z "$3" ]; then
-    laravel_public_folder="/vagrant/laravel/public"
-else
-    laravel_public_folder="$3"
-fi
+# if [ -z "$3" ]; then
+#     laravel_public_folder="/vagrant/laravel/public"
+# else
+#     laravel_public_folder="$3"
+# fi
+laravel_public_folder="$laravel_root_folder/public"
 
 # Test if HHVM is installed
 hhvm --version > /dev/null 2>&1
