@@ -246,7 +246,7 @@ Vagrant.configure("2") do |config|
   ##########
 
   # Provision Composer
-  config.vm.provision "shell", path: "https://raw.github.com/#{github_username}/#{github_repo}/#{github_branch}/scripts/composer.sh", privileged: false, args: composer_packages.join(" ")
+  #config.vm.provision "shell", path: "https://raw.github.com/#{github_username}/#{github_repo}/#{github_branch}/scripts/composer.sh", privileged: false, args: composer_packages.join(" ")
 
   # Provision Laravel
   #config.vm.provision "shell", path: "https://raw.github.com/#{github_username}/#{github_repo}/#{github_branch}/scripts/laravel.sh", privileged: false, args: [server_ip, laravel_root_folder, public_folder, laravel_version]
@@ -277,6 +277,5 @@ Vagrant.configure("2") do |config|
   # Add these to the same directory as the Vagrantfile.
   ##########
   #config.vm.provision "shell", path: "./oci.sh"
-  #config.vm.provision :shell, :path => "oci.sh"
 
 end
